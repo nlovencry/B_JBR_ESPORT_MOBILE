@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Profile"
+    android:background="@color/bg">
+
+
+    <ImageView
+        android:id="@+id/bgimg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bgimages"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gradient">
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imgCard"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="125dp"
+        android:layout_marginStart="30dp"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="10dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/img"
+            android:padding="3dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/imgCard"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="155dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/hayung"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:id="@+id/biodata"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/imgCard"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/bio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="horizontal"
+        android:background="@drawable/trending_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/biodata"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bio"
+        android:layout_width="300dp"
+        android:layout_height="275dp"
+        app:layout_constraintTop_toBottomOf="@id/biodata"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/white_rectangle_background">
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/nama"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/Tl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="@string/tanggal_lahir"
+            android:textSize="15sp"
+            android:layout_below="@id/nama"/>
+
+        <TextView
+            android:id="@+id/Jl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="@string/jenis_kelamin"
+            android:textSize="15sp"
+            android:layout_below="@id/Tl"/>
+
+        <TextView
+            android:id="@+id/Alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="@string/alamat"
+            android:textSize="15sp"
+            android:layout_below="@id/Jl"/>
+
+        <TextView
+            android:id="@+id/tlp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="@string/nomor_telepon"
+            android:textSize="15sp"
+            android:layout_below="@id/Alamat"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="@string/email"
+            android:textSize="15sp"
+            android:layout_below="@id/tlp"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/Tentang"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/bio"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/bio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="horizontal"
+        android:background="@drawable/trending_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/tentang_saya"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bio2"
+        android:layout_width="300dp"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@id/Tentang"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/white_rectangle_background">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:singleLine="false"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            tools:ignore="Suspicious0dp"
+            android:importantForAutofill="no"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rk"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/bio2"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/bio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="horizontal"
+        android:background="@drawable/trending_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/riwayat_karir_game"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bio3"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/rk"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="30dp"
+        android:padding="20dp"
+        app:layout_constraintVertical_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/white_rectangle_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/colorAccent"
+            android:singleLine="false"
+            android:textSize="16sp"
+            tools:ignore="Suspicious0dp"
+            android:importantForAutofill="no"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bio4"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@id/bio3"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="30dp"
+        android:padding="20dp"
+        app:layout_constraintVertical_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+</LinearLayout>
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/edit"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/header_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/bgimg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

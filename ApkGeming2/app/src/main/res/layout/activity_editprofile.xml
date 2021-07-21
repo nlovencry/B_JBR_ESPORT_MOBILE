@@ -200,14 +200,14 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:gravity="center"
-                android:singleLine="false"
+                android:importantForAutofill="no"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
+                android:scrollbars="vertical"
+                android:singleLine="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
-                tools:ignore="Suspicious0dp"
-                android:importantForAutofill="no"
-                android:scrollbars="vertical"/>
+                tools:ignore="Suspicious0dp" />
 
         </LinearLayout>
 

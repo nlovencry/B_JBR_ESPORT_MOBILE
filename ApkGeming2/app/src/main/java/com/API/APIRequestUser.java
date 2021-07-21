@@ -20,6 +20,9 @@ public interface APIRequestUser {
     @GET("api/event")
     Call<ResponseModel> ardEventData();
 
+    @GET("api/jadwal")
+    Call<ResponseModel> ardJadwalData();
+
     @POST("api/logout")
     Call<LoginResponse> userLogout(@Header("Authorization") String token);
 }

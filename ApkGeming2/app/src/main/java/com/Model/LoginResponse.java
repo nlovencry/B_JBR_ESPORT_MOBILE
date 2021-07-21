@@ -4,6 +4,7 @@ public class LoginResponse {
     private String message;
     private int id;
     private String email;
+    private String name;
     private String token;
 
     public String getMessage() {
@@ -22,9 +23,11 @@ public class LoginResponse {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email;}
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
 
     public void setEmail(String email) {
         this.email = email;

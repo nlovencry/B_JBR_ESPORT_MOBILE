@@ -25,7 +25,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     public APIRequestUser apiRequestUser;
-    private Button btnLogin, btn_register;
+    private Button btnLogin;
     private EditText et_email, et_password;
     private String email, pass;
 
@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setEmail(email);
         loginRequest.setPassword(pass);
-
         Call<LoginResponse> loginResponseCall = apiRequestUser.userLogin(loginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
@@ -69,15 +68,16 @@ public class LoginActivity extends AppCompatActivity {
                     Integer id = response.body().getId();
                     String user = response.body().getEmail();
                     String token = response.body().getToken();
+                    String name = response.body().getName();
 
-                    SharedPref.setLoginId(getBaseContext(), id.toString());
-                    SharedPref.setLoginEmail(getBaseContext(), user);
-                    SharedPref.setLogInToken(getBaseContext(), token);
-                    SharedPref.setLoginStatus(getBaseContext(), true);
+                    SharedPreference.setLoginId(getBaseContext(), id.toString());
+                    SharedPreference.setLoginEmail(getBaseContext(), user);
+                    SharedPreference.setLogInToken(getBaseContext(), token);
+                    SharedPreference.setLoginStatus(getBaseContext(), true);
                     startActivity(new Intent(LoginActivity.this, MainActivity2.class));
                     finish();
 
-                    Toast.makeText(getBaseContext(),"pesan: "+msg+"Id: "+id+"Username: "+user+"Token: "+ token, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"Selamat datang "+name, Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(getBaseContext(),"email atau password tidak valid", Toast.LENGTH_LONG).show();
                 }
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(getBaseContext(),"Gagal konek server: "+ t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),"Login gagal", Toast.LENGTH_LONG).show();
             }
         });
 

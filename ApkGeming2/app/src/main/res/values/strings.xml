@@ -45,4 +45,6 @@
     <string name="absent">ABSENT</string>
     <string name="edit">EDIT</string>
     <string name="simpan">SIMPAN</string>
+    <string name="events">EVENT</string>
+    <string name="nama_event">Nama Event</string>
 </resources>

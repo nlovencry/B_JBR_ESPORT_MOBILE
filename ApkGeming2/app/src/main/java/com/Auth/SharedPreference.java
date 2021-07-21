@@ -3,7 +3,7 @@ package com.Auth;
 import android.content.Context;
 import android.preference.PreferenceManager;
 
-class SharedPref {
+class SharedPreference {
     static final String ID_SEDANG_LOGIN = "Id_login";
     static final String EMAIL_SEDANG_LOGIN = "Email_login";
     static final String TOKEN_SEDANG_LOGIN = "Token_login";

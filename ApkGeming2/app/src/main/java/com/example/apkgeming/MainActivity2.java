@@ -13,16 +13,22 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Button button = (Button) findViewById(R.id.Bprofile);
+        Button button1 = (Button) findViewById(R.id.Bevent);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openProfile();
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, Profile.class);
+                startActivity(intent);
             }
         });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MainActivity2.this, event.class);
+                startActivity(intent2);
+            }
+        });
+
     }
 
-    public void openProfile() {
-        Intent intent = new Intent(this, Profile.class);
-        startActivity(intent);
-    }
 }

@@ -4,9 +4,11 @@ import android.content.Context;
 import android.preference.PreferenceManager;
 
 class SharedPreference {
+    static final String PREF_NAME = "pref";
     static final String ID_SEDANG_LOGIN = "Id_login";
     static final String EMAIL_SEDANG_LOGIN = "Email_login";
     static final String TOKEN_SEDANG_LOGIN = "Token_login";
+    static final String NAMA_SEDANG_LOGIN = "Name_login";
     static final String STATUS_SEDANG_LOGIN = "Status_login";
 
     /** Pendlakarasian Shared Preferences yang berdasarkan paramater context */
@@ -34,6 +36,15 @@ class SharedPreference {
         return getSharedPreference(context).getString(EMAIL_SEDANG_LOGIN,"");
     }
 
+    public static void setLoginName(Context context, String name){
+        android.content.SharedPreferences.Editor editor = getSharedPreference(context).edit();
+        editor.putString(NAMA_SEDANG_LOGIN, name);
+        editor.apply();
+    }
+    public static String getLoginName(Context context){
+        return getSharedPreference(context).getString(NAMA_SEDANG_LOGIN,"");
+    }
+
 
     public static void setLogInToken(Context context, String token){
         android.content.SharedPreferences.Editor editor = getSharedPreference(context).edit();
@@ -56,12 +67,15 @@ class SharedPreference {
 
 
 
+
+
     public static void clearLogoutUser(Context context){
         android.content.SharedPreferences.Editor editor = getSharedPreference(context).edit();
         editor.remove(ID_SEDANG_LOGIN);
         editor.remove(EMAIL_SEDANG_LOGIN);
         editor.remove(STATUS_SEDANG_LOGIN);
         editor.remove(TOKEN_SEDANG_LOGIN);
+        editor.remove(NAMA_SEDANG_LOGIN);
         editor.apply();
     }
 }

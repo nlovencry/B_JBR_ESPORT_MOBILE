@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.MaterialComponents.DayNight"
     tools:context=".Detail_event"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
@@ -29,18 +28,19 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="125dp"
         android:layout_marginTop="5dp"
         android:padding="5dp">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="125dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/header_bg2"
-            app:cardBackgroundColor="#fece2f"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:cardElevation="10dp">
 
             <RelativeLayout
@@ -77,15 +77,15 @@
 
             </RelativeLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="125dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            app:cardBackgroundColor="#fece2f"
-            android:background="@drawable/header_bg2"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:cardElevation="10dp">
 
             <RelativeLayout
@@ -122,95 +122,199 @@
 
             </RelativeLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="wrap_content"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Nama Event"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dt_nama"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="false"
-                android:drawablePadding="10dp"
-                android:text="nama" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Tanggal mulai pendaftaran"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama event"
+                    android:textSize="13sp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dt_tmp"
-                android:drawablePadding="10dp"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/dt_nama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="nama"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:text="tgl_mp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Tanggal akhir pendaftaran"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dt_tap"
-                android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal mulai pendaftaran"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/dt_tmp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="tgl_mp"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:text="tgl_ap"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Tanggal mulai"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dt_tm"
-                android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal akhir pendaftaran"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/dt_tap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="tgl_tap"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:text="tgl_mul"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Tanggal akhir"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dt_ta"
-                android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal mulai"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/dt_tm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="tgl_mul"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:text="tgl_akh"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Keterangan"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dt_ket"
-                android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="tgl_ket"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal akhir"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/dt_ta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="tgl_akh"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keterangan"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/dt_ket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="ket"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

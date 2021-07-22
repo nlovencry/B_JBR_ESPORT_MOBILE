@@ -73,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreference.setLoginId(getBaseContext(), id.toString());
                     SharedPreference.setLoginEmail(getBaseContext(), user);
                     SharedPreference.setLogInToken(getBaseContext(), token);
+                    SharedPreference.setLoginName(getBaseContext(), name);
                     SharedPreference.setLoginStatus(getBaseContext(), true);
                     startActivity(new Intent(LoginActivity.this, MainActivity2.class));
                     finish();

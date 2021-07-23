@@ -46,7 +46,8 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.HolderData
     public void onBindViewHolder(@NonNull HolderData holder, int position) {
         ModelJadwal mj = listJadwal.get(position);
         holder.tvId.setText(String.valueOf(mj.getId_jadwal()));
-        holder.tvNama.setText(mj.getNama_jadwal());
+        holder.tvIdteam.setText(String.valueOf(mj.getId_team()));
+        holder.tvKet.setText(mj.getKeterangan());
         holder.List.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,13 +66,14 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.HolderData
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        TextView tvNama, tvId, tvIdteam;
+        TextView tvKet, tvId, tvIdteam;
         RelativeLayout List;
 
         public HolderData(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.tv_id);
-            tvNama = itemView.findViewById(R.id.tv_ket);
+            tvIdteam = itemView.findViewById(R.id.tv_idteam);
+            tvKet = itemView.findViewById(R.id.tv_idket);
             List = itemView.findViewById(R.id.card_jadwal);
         }
     }

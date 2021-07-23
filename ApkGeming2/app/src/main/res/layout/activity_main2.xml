@@ -11,7 +11,7 @@
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/header_bg2"
+        android:background="@drawable/header_background"
         android:padding="10dp"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -104,7 +104,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/schedule"
+                    android:text="@string/jadwal"
                     android:textColor="@color/colorAccent"
                     android:background="#0000"
                     android:textSize="20sp"
@@ -132,13 +132,13 @@
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/absent"/>
+                    android:src="@drawable/icteam"/>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/absent"
+                    android:text="@string/teams"
                     android:textColor="@color/colorAccent"
                     android:background="#0000"
                     android:textSize="20sp"

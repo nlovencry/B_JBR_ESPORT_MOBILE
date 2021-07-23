@@ -48,4 +48,6 @@
     <string name="events">EVENT</string>
     <string name="nama_event">Nama Event</string>
     <string name="nama_jadwal">Nama Jadwal</string>
+    <string name="jadwal">jADWAL</string>
+    <string name="teams">TEAMS</string>
 </resources>

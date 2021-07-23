@@ -47,4 +47,5 @@
     <string name="simpan">SIMPAN</string>
     <string name="events">EVENT</string>
     <string name="nama_event">Nama Event</string>
+    <string name="nama_jadwal">Nama Jadwal</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.apkgeming">
+    package="com.example.apkgeming" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ApkGeming"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".jadwal"></activity>
+        android:usesCleartextTraffic="true" >
+        <activity android:name=".DetailJadwal" />
+        <activity android:name=".jadwal" />
         <activity android:name=".Detail_event" />
         <activity android:name=".event" />
         <activity android:name=".editprofile" />
@@ -21,7 +22,7 @@
         <activity android:name="com.Auth.LoginActivity" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Profile" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

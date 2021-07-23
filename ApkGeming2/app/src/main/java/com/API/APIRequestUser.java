@@ -1,8 +1,10 @@
 package com.API;
 
 import com.Model.DataModel;
+import com.Model.JadwalResponse;
 import com.Model.LoginRequest;
 import com.Model.LoginResponse;
+import com.Model.ResponseJadwal;
 import com.Model.ResponseModel;
 
 import retrofit2.Call;
@@ -21,7 +23,7 @@ public interface APIRequestUser {
     Call<ResponseModel> ardEventData();
 
     @GET("api/jadwal")
-    Call<ResponseModel> ardJadwalData();
+    Call<JadwalResponse> ardJadwalData();
 
     @POST("api/logout")
     Call<LoginResponse> userLogout(@Header("Authorization") String token);

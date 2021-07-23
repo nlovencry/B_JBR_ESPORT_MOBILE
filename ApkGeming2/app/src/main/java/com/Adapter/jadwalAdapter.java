@@ -17,52 +17,42 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Model.DataModel;
-import com.example.apkgeming.Detail_event;
+import com.Model.ModelJadwal;
+import com.example.apkgeming.DetailJadwal;
 import com.example.apkgeming.R;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData>{
+public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.HolderData>{
     private Context ctx;
-    private List<DataModel> listEvent;
+    private List<ModelJadwal> listJadwal;
 
-    public AdapterData(Context ctx, List<DataModel> listEvent){
+    public jadwalAdapter(Context ctx, List<ModelJadwal> listJadwal){
         this.ctx = ctx;
-        this.listEvent = listEvent;
+        this.listJadwal = listJadwal;
     }
 
     @NonNull
     @Override
     public HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_event, parent, false);
+        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_jadwal, parent, false);
         HolderData holder = new HolderData(layout);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull HolderData holder, int position) {
-        DataModel dm = listEvent.get(position);
-        holder.tvId.setText(String.valueOf(dm.getId_event()));
-        holder.tvNama.setText(dm.getNama_event());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            holder.tvKet.setText(Html.fromHtml(dm.getKeterangan(), Html.FROM_HTML_MODE_LEGACY));
-        } else
-            holder.tvKet.setText(Html.fromHtml(dm.getKeterangan()));
-        String url = "http://192.168.88.244:8000/images/"+dm.getGambar();
-        Picasso.get()
-                .load(url)
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-                .into(holder.Gambar);
+        ModelJadwal mj = listJadwal.get(position);
+        holder.tvId.setText(String.valueOf(mj.getId_jadwal()));
+        holder.tvNama.setText(mj.getNama_jadwal());
         holder.List.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ctx, Detail_event.class );
+                Intent intent = new Intent(ctx, DetailJadwal.class );
                 Gson gson = new Gson();
-                String str = gson.toJson(listEvent.get(position), DataModel.class);
+                String str = gson.toJson(listJadwal.get(position), ModelJadwal.class);
                 intent.putExtra("extra", str);
                 ctx.startActivity(intent);
             }
@@ -71,21 +61,18 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData>{
 
     @Override
     public int getItemCount() {
-        return listEvent.size();
+        return listJadwal.size();
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        TextView tvNama, tvKet, tvId;
-        ImageView Gambar;
+        TextView tvNama, tvId, tvIdteam;
         RelativeLayout List;
 
         public HolderData(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.tv_id);
-            tvNama = itemView.findViewById(R.id.tv_nama);
-            tvKet = itemView.findViewById(R.id.tv_ket);
-            Gambar = itemView.findViewById(R.id.gambar);
-            List = itemView.findViewById(R.id.card_event);
+            tvNama = itemView.findViewById(R.id.tv_ket);
+            List = itemView.findViewById(R.id.card_jadwal);
         }
     }
 }

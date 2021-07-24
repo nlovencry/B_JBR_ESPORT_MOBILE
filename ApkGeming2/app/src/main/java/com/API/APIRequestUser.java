@@ -1,20 +1,17 @@
 package com.API;
 
-import com.Model.DataModel;
+import com.Model.GameResponse;
 import com.Model.JadwalResponse;
 import com.Model.LoginRequest;
 import com.Model.LoginResponse;
-import com.Model.ResponseJadwal;
 import com.Model.ResponseModel;
 import com.Model.TeamResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 public interface APIRequestUser {
     @POST("api/login")
@@ -28,6 +25,9 @@ public interface APIRequestUser {
 
     @GET("api/team")
     Call<TeamResponse> ardTeamData();
+
+    @GET("api/game")
+    Call<GameResponse> ardGameData();
 
     @POST("api/logout")
     Call<LoginResponse> userLogout(@Header("Authorization") String token);

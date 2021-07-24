@@ -62,14 +62,14 @@
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/account"/>
+                    android:src="@drawable/game"/>
 
                 <Button
                     android:id="@+id/Bprofile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/profile"
+                    android:text="@string/game"
                     android:textColor="@color/colorAccent"
                     android:background="#0000"
                     android:textSize="20sp"
@@ -97,7 +97,7 @@
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/game"/>
+                    android:src="@drawable/schedule2"/>
 
                 <Button
                     android:id="@+id/Bjadwal"

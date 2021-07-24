@@ -6,6 +6,7 @@ import com.Model.LoginRequest;
 import com.Model.LoginResponse;
 import com.Model.ResponseJadwal;
 import com.Model.ResponseModel;
+import com.Model.TeamResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -24,6 +25,9 @@ public interface APIRequestUser {
 
     @GET("api/jadwal")
     Call<JadwalResponse> ardJadwalData();
+
+    @GET("api/team")
+    Call<TeamResponse> ardTeamData();
 
     @POST("api/logout")
     Call<LoginResponse> userLogout(@Header("Authorization") String token);

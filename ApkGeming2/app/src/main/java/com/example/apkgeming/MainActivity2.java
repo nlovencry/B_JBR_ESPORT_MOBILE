@@ -15,6 +15,7 @@ public class MainActivity2 extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.Bprofile);
         Button button1 = (Button) findViewById(R.id.Bevent);
         Button button2 = (Button) findViewById(R.id.Bjadwal);
+        Button button3 = (Button) findViewById(R.id.Bteam) ;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +35,14 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent3 = new Intent(MainActivity2.this, jadwal.class);
                 startActivity(intent3);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent4 = new Intent(MainActivity2.this, team.class);
+                startActivity(intent4);
             }
         });
 

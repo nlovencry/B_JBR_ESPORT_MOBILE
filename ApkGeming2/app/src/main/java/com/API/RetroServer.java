@@ -4,11 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroServer {
-<<<<<<< Updated upstream
-    private static final String baseurl = "http://workshopjti.com/sipasport/public/";
-=======
     private static final String baseurl = "http://192.168.0.14:8000/";
->>>>>>> Stashed changes
     private static Retrofit retro;
 
     public static Retrofit konekRetrofit(){

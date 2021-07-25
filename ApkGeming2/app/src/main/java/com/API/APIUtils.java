@@ -8,7 +8,7 @@ public class APIUtils {
 
     }
 
-    public static final String API_URL = "http://192.168.88.244:8000/";
+    public static final String API_URL = "http://workshopjti.com/sipasport/public/";
     public static APIRequestUser getRequestUser(){
         return RetrofitClient.getClient(API_URL).create(APIRequestUser.class);
     }

@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(getBaseContext(),"Selamat datang "+name, Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getBaseContext(),"email atau password tidak valid", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"email atau password tidak valid : ", Toast.LENGTH_LONG).show();
                 }
             }
 

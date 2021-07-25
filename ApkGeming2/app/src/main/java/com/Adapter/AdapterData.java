@@ -51,7 +51,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData>{
             holder.tvKet.setText(Html.fromHtml(dm.getKeterangan(), Html.FROM_HTML_MODE_LEGACY));
         } else
             holder.tvKet.setText(Html.fromHtml(dm.getKeterangan()));
-        String url = "http://192.168.88.244:8000/images/"+dm.getGambar();
+        String url = "http://workshopjti.com/sipasport/public/images/"+dm.getGambar();
         Picasso.get()
                 .load(url)
                 .placeholder(R.drawable.ic_launcher_background)
